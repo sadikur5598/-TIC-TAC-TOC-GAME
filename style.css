@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.cell {
+  background-color: white;
+  border: 2px solid #333;
+  aspect-ratio: 1; /* This keeps the cells perfectly square */
+  position: relative;
+  cursor: pointer;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.cell.x:before {
+  content: 'X';
+  color: #ff5757;
+}
+
+.cell.o:before {
+  content: 'O';
+  color: #4ecdc4;
+}
+
+.game-status {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.restart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .game-board {
+    max-width: 300px;
+  }
+  
+  .cell {
+    font-size: 2.5em;
+  }
+}
